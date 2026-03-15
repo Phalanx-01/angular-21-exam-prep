@@ -17,8 +17,8 @@ export const routes: Routes = [
             },
             {
                 path: 'tasks',
-                loadChildren: () => import('./features/tasks/tasks.routes').then(m => m.taskRoutes)
-            }
+                loadChildren: () => import('./features/tasks/tasks.routes').then(m => m.tasksRoutes)
+            },
             {
                 path: 'projects',
                 loadChildren: () => import('./features/projects/projects.routes').then(m => m.projectsRoutes)
