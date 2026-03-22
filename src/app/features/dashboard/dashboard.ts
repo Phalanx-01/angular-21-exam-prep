@@ -1,5 +1,6 @@
-import { Component, signal, computed } from '@angular/core';
+import { Component, signal, computed, inject, effect } from '@angular/core';
 import { Task, TaskPriority, TaskStatus } from '../../core/models';
+import { APP_ENVIRONMENT } from '../../core/config/app-environment.token';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,6 +9,7 @@ import { Task, TaskPriority, TaskStatus } from '../../core/models';
   styleUrl: './dashboard.scss',
 })
 export class Dashboard {
+  private readonly env = inject(APP_ENVIRONMENT);
   protected readonly tasks = signal<Task[]>([
     {
       id: '1',
@@ -70,6 +72,12 @@ export class Dashboard {
   protected readonly inProgressTasks = computed(
     () => this.tasks().filter((t) => t.status === 'in-progress').length,
   );
+
+  constructor() {
+    effect(() => {
+      console.log(`[${this.env.appName}] Tasks geandert: ${this.tasks().length} total`);
+    });
+  }
 
   protected addTask(title: string): void {
     this.tasks.update((current) => [
