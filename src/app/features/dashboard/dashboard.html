@@ -1,1 +1,29 @@
-<p>dashboard works!</p>
+<div class="stats">
+  <div class="stat-card">
+    <h3>Total</h3>
+    <p>{{ totalTasks() }}</p>
+  </div>
+  <div class="stat-card">
+    <h3>In Progress</h3>
+    <p>{{ inProgressTasks() }}</p>
+  </div>
+  <div class="stat-card">
+    <h3>Done</h3>
+    <p>{{ doneTasks() }}</p>
+  </div>
+</div>
+
+<div class="add-task">
+  <input #taskInput placeholder="Neuer Task..." />
+  <button (click)="addTask(taskInput.value); taskInput.value = ''">+</button>
+</div>
+
+<ul class="task-list">
+  @for (task of tasks(); track task.id) {
+    <li>
+      <span class="status {{ task.status }}">{{ task.status }}</span>
+      <span>{{ task.title }}</span>
+      <span class="priority {{ task.priority }}">{{ task.priority }}</span>
+    </li>
+  }
+</ul>

@@ -1,0 +1,108 @@
+.stats {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.stat-card {
+  background: white;
+  padding: 16px 24px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  flex: 1;
+}
+
+.stat-card h3 {
+  font-size: 0.875rem;
+  color: #64748b;
+  margin-bottom: 4px;
+}
+
+.stat-card p {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.add-task {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.add-task input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+}
+
+.add-task button {
+  padding: 8px 16px;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.task-list {
+  list-style: none;
+}
+
+.task-list li {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 12px;
+  background: white;
+  margin-bottom: 8px;
+  border-radius: 4px;
+}
+
+.status {
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+.status.done {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.status.in-progress {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+.status.todo {
+  background: #f1f5f9;
+  color: #64748b;
+}
+
+.status.review {
+  background: #fef9c3;
+  color: #ca8a04;
+}
+
+.priority {
+  margin-left: auto;
+  font-size: 0.75rem;
+}
+
+.priority.critical {
+  color: #dc2626;
+}
+
+.priority.high {
+  color: #ea580c;
+}
+
+.priority.medium {
+  color: #ca8a04;
+}
+
+.priority.low {
+  color: #16a34a;
+}
